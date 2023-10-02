@@ -1,0 +1,74 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'style.css' %}">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    @media (max-width: 400px) {
+    body {
+        overflow-x: hidden; /* Disable horizontal overflow for small screens */
+        height: 100%;
+    }
+    .form-control{
+        width: 400px;
+        height: 35px;
+        margin: 4px 5px;
+    }
+    .btn{
+        margin: 6px 150px;
+    }
+}
+</style>
+<body>
+    
+    <form action="" method="post" class="myform">
+        {% csrf_token %}
+        <div class="input-group">
+          <input type="text" class="form-control" name="city" placeholder="Search">
+          <div class="input-group-btn">
+            <button class="btn" type="submit">
+                <span class="transition"></span>
+                <span class="gradient"></span>
+                <span class="label">submit</span>
+              <i class="glyphicon glyphicon-search"></i>
+            </button>
+          </div>
+        </div>
+    <form>
+    <div class="card-con">
+        <div class="card">
+            <div class="container">
+            <div class="cloud front">
+                <span class="left-front"></span>
+                <span class="right-front"></span>
+            </div>
+            <span class="sun sunshine"></span>
+            <span class="sun"></span>
+            <div class="cloud back">
+                <span class="left-back"></span>
+                <span class="right-back"></span>
+            </div>
+            </div>
+        
+            <div class="card-header">
+            <span >{{city}} <br>Country code:{{country_code}}</span>
+            </div>
+            <br>
+            <span class="coordinate">coordinate:{{coordinate}}</span>
+            <br>
+            <span class="pressure">Pressure:{{pressure}}</span>
+            <br>
+            <span class="humidity">Humidity:{{humidity}}</span>
+            <span class="temp">{{temp}}</span>
+            
+            <div class="temp-scale">
+            <span>Celcius</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
